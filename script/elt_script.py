@@ -28,3 +28,21 @@ if not wait_for_postgres(host="source_postgres"):
 
 print("Starting ELT script...")
 
+# Configuration for the source PostgreSQL database
+source_config = {
+    'dbname': 'source_db',
+    'user': 'postgres',
+    'password': 'secret',
+    # Use the service name from docker-compose as the hostname
+    'host': 'source_postgres'
+}
+
+# Configuration for the destination PostgreSQL database
+destination_config = {
+    'dbname': 'destination_db',
+    'user': 'postgres',
+    'password': 'secret',
+    # Use the service name from docker-compose as the hostname
+    'host': 'destination_postgres'
+}
+
